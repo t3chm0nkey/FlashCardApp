@@ -1,8 +1,24 @@
 {
     "FlashCards":[
         {
-            "Question": "Test Question",
-            "Answer": "Test Answer"
+            "Question": "Why java is not 100% Object-oriented?",
+            "Answer": "Java is not 100% Object-oriented because it makes use of eight primitive datatypes such as boolean, byte, char, int, float, double, long, short which are not objects."
+        },
+        {
+            "Question": "What are wrapper classes?",
+            "Answer": "Wrapper classes converts the java primitives into the reference types (objects)"
+        },
+        {
+            "Question": "What are constructors in Java?",
+            "Answer": "In Java, constructor refers to a block of code which is used to initialize an object. It must have the same name as that of the class. Also, it has no return type and it is automatically called when an object is created."
+        },
+        {
+            "Question": "What is singleton class and how can we make a class singleton?",
+            "Answer": "Singleton class is a class whose only one instance can be created at any given time, in one JVM. A class can be made singleton by making its constructor private."
+        },
+        {
+            "Question": "What is a Spring?",
+            "Answer": "Wikipedia defines the Spring framework as “an application framework and inversion of control container for the Java platform. The framework’s core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform.” Spring is essentially a lightweight, integrated framework that can be used for developing enterprise applications in java."
         }
     ]
 }
