@@ -1,0 +1,67 @@
+<html>
+<head>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+	    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	    crossorigin="anonymous">
+    </script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script>
+        $(document).ready(function(e) {
+            $.getJSON("https://raw.githubusercontent.com/t3chm0nkey/FlashCardApp/master/Cards", function(result){
+                var flashCards = result.FlashCards;
+                var card;
+                //get a new card at start
+                getNewCard();
+             
+                setCardText(card.Question);
+                
+                //flip between the question and answer
+                function flipCard () {
+                    
+                    if($("#cardText").text() == card.Question){
+                        setCardText(card.Answer);
+                    }else if($("#cardText").text() == card.Answer){
+                        setCardText(card.Question);
+                    }
+                }
+                //set the text to display of the card
+                function setCardText (text){
+                    $("#cardText").text(text)
+                }
+                
+                //get a new card randomly
+                function getNewCard (){
+                    var i = Math.floor(Math.random() * (flashCards.length - 0) ) + 0;
+                    card = flashCards[i]
+                }
+                
+                $("#flipBtn").click(function(){
+                    flipCard ();
+                });
+                $("#nextBtn").click(function(){
+                    getNewCard ();
+                });
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="row h-100">
+        <div class="col-sm-2">
+            Menu
+        </div>
+        <div class="col-sm-9 my-auto">
+            <div class="shadow h-75 bg-white rounded card">
+                <h2 class="text-center my-auto"id="cardText">Test</h2>
+            </div>
+            <div class="p-3">
+                <button id="flipBtn"type="button" class="btn btn-default">Flip</button>
+                <button id="nextBtn"type="button" class="btn btn-default">Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
