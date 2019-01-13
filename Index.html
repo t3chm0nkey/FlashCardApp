@@ -15,8 +15,6 @@
                 var card;
                 //get a new card at start
                 getNewCard();
-             
-                setCardText(card.Question);
                 
                 //flip between the question and answer
                 function flipCard () {
@@ -36,6 +34,7 @@
                 function getNewCard (){
                     var i = Math.floor(Math.random() * (flashCards.length - 0) ) + 0;
                     card = flashCards[i]
+                    setCardText(card.Question);
                 }
                 
                 $("#flipBtn").click(function(){
@@ -54,7 +53,7 @@
             Menu
         </div>
         <div class="col-sm-9 my-auto">
-            <div class="shadow h-75 bg-white rounded card">
+            <div class="shadow h-75 p-3 bg-white rounded card">
                 <h2 class="text-center my-auto"id="cardText">Test</h2>
             </div>
             <div class="p-3">
